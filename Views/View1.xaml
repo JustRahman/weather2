@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="weather.Views.View1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:weather.Views"
+              
+             xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+             xmlns:dxwuin="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/navigation"
+             
+             xmlns:ModelView="clr-namespace:weather.ModelView"              
+             mc:Ignorable="d"
+             Background="Transparent"
+             d:DesignHeight="500" d:DesignWidth="1000" >
+
+    
+
+
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="{Binding all_background}" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="4">
+            
+
+            <Grid Margin="0 30 0 0"  >
+                <StackPanel  Width="200" Height="200" Margin="20 0 0 0" Background="{Binding all_background}" HorizontalAlignment="Left" >
+                    <TextBlock Text="{Binding wind_lan}" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Foreground="{Binding gray_to_black}"  Margin="20 10 0 20"/>
+                    <TextBlock FontSize="35" FontWeight="Bold" FontFamily="Times New Roman" Foreground="{Binding blact_to_white}" Text="{Binding wind}" Margin="30 20 0 40"/>
+                    <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                        <Image  Source="C:\Data\source\WPF\weather\bin\Debug\clothes\compass.png" Width="30" />
+                        <TextBlock Text="{Binding direction}"  Foreground="Gray" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Margin="5 4 0 0"/>
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="200" Height="200"  Background="{Binding all_background}" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding pressure_lan}" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Foreground="{Binding gray_to_black}"  Margin="20 10 0 20"/>
+                    <TextBlock FontSize="35" FontWeight="Bold" FontFamily="Times New Roman" Foreground="{Binding blact_to_white}" Text="{Binding pressure}"  Margin="30 20 0 40"/>
+                    <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                        <Image  Source="C:\Data\source\WPF\weather\bin\Debug\clothes\pressure.jpg" Width="30" />
+                        <TextBlock Foreground="Gray" Text="Normal" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Margin="5 6 0 0"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="200" Height="200" Margin="0 0 20 0" Background="{Binding all_background}" HorizontalAlignment="Right">
+                    <TextBlock Text="{Binding humidity_lan}" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Foreground="{Binding gray_to_black}"  Margin="20 10 0 20"/>
+                    <TextBlock Foreground="{Binding blact_to_white}" FontSize="35" FontWeight="Bold" FontFamily="Times New Roman"  Text="{Binding humidity}" Margin="30 20 0 40"/>
+                    <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                        <Image  Source="{Binding icon_hum}" Width="20" />
+                        <TextBlock Foreground="Gray" Text="{Binding quality}" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Margin="5 6 0 0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0 30 0 0" >
+                <StackPanel Width="200" Height="200" Margin="20 0 0 0" Background="{Binding all_background}" HorizontalAlignment="Left" >
+                    <TextBlock Text="{Binding visibility_lan}" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Foreground="{Binding gray_to_black}"  Margin="20 10 0 20"/>
+                    <TextBlock Foreground="{Binding blact_to_white}" FontSize="35" FontWeight="Bold" FontFamily="Times New Roman"  Text="{Binding visibility}" Margin="30 20 0 40"/>
+                    <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                        <Image  Source="C:\Data\source\WPF\weather\bin\Debug\clothes\visibility.jpg" Width="25" Margin="0 2 0 0" />
+                        <TextBlock Foreground="Gray" Text="Average" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Margin="5 5 0 0"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="200" Height="200"  Background="{Binding all_background}" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding sunrise}" FontWeight="Medium" FontFamily="Times New Roman" FontSize="18" Foreground="{Binding gray_to_black}"  Margin="20 10 0 10"/>
+                    <StackPanel Orientation="Horizontal" Margin="20 0 0 20">
+                        <Image  Source="C:\Data\source\WPF\weather\bin\Debug\clothes\sunrise.png" Width="60" Margin="0 2 0 0" />
+                        <TextBlock  Text="{Binding startdatetime}" FontWeight="Medium" FontFamily="Times New Roman" FontSize="25" Foreground="{Binding blact_to_white}" Margin="5 15 0 0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
+                        <Image  Source="C:\Data\source\WPF\weather\bin\Debug\clothes\sunset.png" Width="60" Margin="0 2 0 0" />
+                        <TextBlock  Text="{Binding finishdatetime}" FontWeight="Medium" FontFamily="Times New Roman" FontSize="25" Foreground="{Binding blact_to_white}" Margin="5 15 0 0"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="200" Height="170"  HorizontalAlignment="Right" Margin="0 0 20 0">
+                    <Button Margin="0 30 0 30" Background="{Binding all_background}" BorderBrush="White" FontSize="20" Foreground="{Binding blact_to_white}" FontFamily="Times New Roman" Content="{Binding refresh_lan}" Command="{Binding refresh}"  FontWeight="SemiBold"  Width="180" Height="40"/>
+
+                    <Button Foreground="{Binding blact_to_white}" Background="{Binding all_background}" BorderBrush="White" FontSize="20" Content="{Binding details_lan}" FontFamily="Times New Roman" Command="{Binding details}" FontWeight="SemiBold"  Width="180" Height="40"/>
+                </StackPanel>
+            </Grid>
+            
+        </StackPanel>
+
+
+        <!--<TextBlock Grid.Row="0" Grid.Column="4" Width="120" Height="30" Text="{Binding current_country}"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" >
+            <TextBlock Text="{Binding current_weather_lan}" FontWeight="Medium"
+                       FontSize="17" Margin="0 0 0 10"/>
+            <TextBlock Width="auto" Height="30" FontSize="15" Text="{Binding time, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="{Binding current_country}" FontSize="15" Width="150" Height="35" HorizontalAlignment="Left"/>
+
+        </StackPanel>-->
+
+        
+
+        
+
+        <!--<Image Grid.Row="1" Grid.Column="0" Source="https://bmcdn.nl/assets/weather-icons/v2.1/fill/overcast-night.svg"/>-->
+      <!--<Path Grid.Row="1" Grid.Column="0" Data="M82.738003,0 C100.97289,-1.9073486E-06 116.51044,11.548668 122.43556,27.730904 L122.78405,28.760855 123.53435,28.69423 C124.60753,28.612572 125.69191,28.570997 126.786,28.570997 150.12666,28.570997 169.048,47.49234 169.048,70.832998 169.048,90.526682 155.57764,107.07419 137.34793,111.76448 L136.905,111.8667 136.905,113.095 126.786,113.095 42.262001,113.095 35.476002,113.095 35.476002,112.55007 34.780926,112.43491 C15.008652,108.90309 0,91.620775 0,70.832998 0,47.49234 18.921341,28.570997 42.262001,28.570997 L42.754086,28.577224 43.040447,27.730904 C48.965561,11.548668 64.503113,-1.9073486E-06 82.738003,0 z" Fill="Black" HorizontalAlignment="Left" Height="113.095"    Stretch="Fill" VerticalAlignment="Top" Width="138"/>-->
+
+
+        <!--<Path Grid.Row="1" Grid.Column="0" Data="C:\Users\SUMBAR\Downloads\cloud-svgrepo-com.svg"  HorizontalAlignment="Left"   Stretch="Fill" Stroke="Black" Fill="DarkSlateGray" VerticalAlignment="Top" Width="200"      RenderTransformOrigin="-0.133,0.275"/>-->
+
+        <!--<Image Grid.Row="1" Grid.Column="0" Source="C:\Users\SUMBAR\Downloads\cloud-svgrepo-com.svg"/>-->
+        <!--<StackPanel Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="2" Grid.RowSpan="3">
+            <Border  BorderBrush="LightGray" BorderThickness="0 0 0 1">
+                <Grid Height="50" Margin="0 10 0 0"  >
+                    <TextBlock Text="{Binding }" FontSize="18" Width="250" Height="35" HorizontalAlignment="Left"/>
+                    <TextBlock Width="120" Height="35" FontSize="20" FontWeight="Medium" Text="{Binding }" HorizontalAlignment="Right"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="LightGray" BorderThickness="0 0 0 1">
+                <Grid Height="50" Margin="0 0 0 5" >
+                    <TextBlock Text="{Binding }" FontSize="18" Width="250" Height="35" HorizontalAlignment="Left"/>
+                    <TextBlock Width="120" FontSize="20" FontWeight="Medium" Text="{Binding }" Height="35" HorizontalAlignment="Right"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="LightGray" BorderThickness="0 0 0 1">
+                <Grid Height="50" Margin="0 0 0 5" >
+                    <TextBlock Text="{Binding }" FontSize="18" Width="250" Height="35" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="20" FontWeight="Medium" Width="120" Text="{Binding wind}"  Height="35" HorizontalAlignment="Right"/>
+                </Grid>
+            </Border>
+
+            <Grid Height="50" Margin="0 0 0 5" >
+                <TextBlock Width="250" FontSize="18" Text="{Binding }" Height="35" HorizontalAlignment="Left"/>
+                <TextBlock FontSize="20" FontWeight="Medium" Width="120" Height="35" Text="{Binding }" HorizontalAlignment="Right"/>
+            </Grid>
+
+            <Grid  Margin="0 20 0 0">
+                <Button Background="White" BorderBrush="White" FontSize="20" Content="REFRESH" Command="{Binding refresh}"  FontWeight="SemiBold"  HorizontalAlignment="Left" Width="auto" Height="40"/>
+
+                <Button Background="White" BorderBrush="White" FontSize="20" Content="MORE DETAILS→" Command="{Binding details}" FontWeight="SemiBold"  HorizontalAlignment="Right" Width="170" Height="40"/>
+            </Grid>
+        </StackPanel>-->
+
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,11 @@
+[{"current_weather":"ПОГОДA СЕЙЧАС","pressure":"ДАВЛЕНИЕ",
+"wind":"ВЕТЕР","humidity":"ВЛАЖНОСТЬ","visibility":"ВИДИМОСТЬ","language":"ru","real_feelss":"Ощущ","max_temperature":"Мах","min_temperature":"Мин","longtitude":"Долгота",
+"latitude":"Ширина","language_direct":"Russian","sun":"Восход Заход","refresh":"Обновить","details":"Больше→",
+"highlight":"Основные момент","go_back":"Обратно","max_min_chg":"Температура","lan_lon_chg":"Высота над морем"},{"current_weather":"CURRENT WEATHER","pressure":"PRESSURE",
+"wind":"WIND","humidity":"HUMIDITY","visibility":"VISIBILITY","language":"en","real_feelss":"RealFeel","max_temperature":"Мах","min_temperature":"Мin","longtitude":"longtitude",
+"latitude":"latitude","language_direct":"English","sun":"Sunrise SunSet","refresh":"Refresh","details":"More→",
+"highlight":"Today's highlights","go_back":"Go back","max_min_chg":"Temperatur","lan_lon_chg":"Atitude"},{"current_weather":"SU WAGTAKY HOWA","pressure":"DAWLEENIYE",
+"wind":"SEMAL","humidity":"ÇIGLYK","visibility":"ARRASAÇYLYK","language":"tr","real_feelss":"Duymak","max_temperature":"Мах","min_temperature":"Мin","longtitude":"Uzynlyk",
+"latitude":"Giňişlik","language_direct":"Turkmen","sun":"GunBatar GunDogan","refresh":"Tazelemek","details":"Koprak→",
+"highlight":"Su gundaki pursatla","go_back":"Iza","max_min_chg":"Temperatur","lan_lon_chg":"Uzynlyk"}]
+
